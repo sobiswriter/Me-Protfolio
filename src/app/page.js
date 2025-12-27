@@ -1,10 +1,10 @@
 import ThemeToggle from "./components/ThemeToggle";
-import FaultyTerminal from "./components/FaultyTerminal";
+import LiquidEther from "./components/LiquidEther";
 
 export default function Home() {
     return (
         <>
-            {/* Faulty Terminal Background */}
+            {/* Liquid Ether Background */}
             <div style={{
                 position: 'fixed',
                 top: 0,
@@ -12,27 +12,25 @@ export default function Home() {
                 width: '100%',
                 height: '100%',
                 zIndex: -10,
-                opacity: 0.12,
+                opacity: 0.25,
                 pointerEvents: 'none'
             }}>
-                <FaultyTerminal
-                    scale={1.5}
-                    gridMul={[2, 1]}
-                    digitSize={1.2}
-                    timeScale={0.5}
-                    pause={false}
-                    scanlineIntensity={0.5}
-                    glitchAmount={1}
-                    flickerAmount={1}
-                    noiseAmp={1}
-                    chromaticAberration={0}
-                    dither={0}
-                    curvature={0.1}
-                    tint="#00ff41"
-                    mouseReact={true}
-                    mouseStrength={0.5}
-                    pageLoadAnimation={true}
-                    brightness={0.6}
+                <LiquidEther
+                    colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+                    mouseForce={35}
+                    cursorSize={75}
+                    isViscous={true}
+                    viscous={30}
+                    iterationsViscous={32}
+                    iterationsPoisson={20}
+                    resolution={0.3}
+                    isBounce={false}
+                    autoDemo={true}
+                    autoSpeed={0.55}
+                    autoIntensity={2.2}
+                    takeoverDuration={0.25}
+                    autoResumeDelay={3000}
+                    autoRampDuration={0.6}
                 />
             </div>
 
