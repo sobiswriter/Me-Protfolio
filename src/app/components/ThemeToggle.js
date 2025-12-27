@@ -4,16 +4,13 @@ import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
     const [theme, setTheme] = useState("dark");
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        // Check local storage or preference
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme) {
-            setTheme(savedTheme);
-            document.documentElement.setAttribute("data-theme", savedTheme);
-        } else {
-            document.documentElement.setAttribute("data-theme", "dark");
-        }
+        setMounted(true);
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        setTheme(savedTheme);
+        document.documentElement.setAttribute("data-theme", savedTheme);
     }, []);
 
     const toggleTheme = () => {
@@ -23,31 +20,17 @@ export default function ThemeToggle() {
         localStorage.setItem("theme", newTheme);
     };
 
+    if (!mounted) return null;
+
     return (
         <button
             onClick={toggleTheme}
-            className="fixed top-6 right-6 z-50 p-2 rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] text-[var(--foreground)] transition-all hover:scale-110 hover:border-[var(--primary)] shadow-lg"
+            className="theme-toggle"
             aria-label="Toggle Theme"
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         >
             {theme === "dark" ? (
-                // Moon Icon
                 <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                >
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            ) : (
-                // Sun Icon
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
                     width="20"
                     height="20"
                     viewBox="0 0 24 24"
@@ -66,6 +49,19 @@ export default function ThemeToggle() {
                     <line x1="21" y1="12" x2="23" y2="12"></line>
                     <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            ) : (
+                <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                >
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
             )}
         </button>

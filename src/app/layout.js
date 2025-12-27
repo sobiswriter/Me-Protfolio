@@ -1,21 +1,24 @@
 import './globals.css';
 
 export const metadata = {
-    title: 'Portfolio | Creative Developer',
-    description: 'Professional portfolio showcasing creative development and design.',
+    title: 'Souradip Biswas | AI/ML Developer & Researcher',
+    description: 'AI-focused developer building applied systems in ML, NLP, and generative AI. Specializing in document intelligence, persona-based systems, and creative AI tooling.',
+    keywords: 'AI Developer, Machine Learning, NLP, Applied AI, AI Systems, Software Engineer',
+    authors: [{ name: 'Souradip Biswas' }],
+    openGraph: {
+        title: 'Souradip Biswas | AI/ML Developer',
+        description: 'Building applied AI systems, not toy demos.',
+        type: 'website',
+    }
 };
 
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <head>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-                <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
             </head>
             <body>
-                <div className="bg-dots"></div>
-                <div className="bg-gradient"></div>
                 {children}
             </body>
         </html>
