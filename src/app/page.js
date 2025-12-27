@@ -1,175 +1,320 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+import Image from "next/image";
 
 export default function Home() {
-    const [scrolled, setScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const projects = [
-        {
-            title: "Solaris AI",
-            description: "Next-gen neural interface for real-time data visualization.",
-            tech: ["React", "Three.js", "GPT-4"],
-            color: "#7000ff"
-        },
-        {
-            title: "Ether Drive",
-            description: "Decentralized storage solution with focus on privacy and speed.",
-            tech: ["Rust", "Wasm", "IPFS"],
-            color: "#00d4ff"
-        },
-        {
-            title: "Vortex UI",
-            description: "Premium design system for enterprise-level applications.",
-            tech: ["Figma", "Stitches", "React"],
-            color: "#ff0070"
-        }
-    ];
-
     return (
-        <main>
-            {/* Navigation */}
-            <nav style={{
-                background: scrolled ? 'rgba(5, 5, 5, 0.8)' : 'transparent',
-                borderColor: scrolled ? 'var(--card-border)' : 'transparent'
-            }}>
-                <div className="container nav-content">
-                    <div className="logo" style={{ color: 'var(--foreground)' }}>SOURAV.</div>
-                    <div className="nav-links">
-                        <a href="#work">Work</a>
-                        <a href="#about">About</a>
-                        <a href="#skills">Skills</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                </div>
-            </nav>
-
+        <main className="min-h-screen">
             {/* Hero Section */}
-            <section className="container">
-                <div className="reveal">
-                    <p className="stagger-1" style={{ color: 'var(--accent)', fontWeight: 600, marginBottom: '1rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontSize: '0.8rem' }}>Available for projects</p>
-                    <h1 className="stagger-2">
-                        Crafting <span className="gradient-text">Digital</span><br />
-                        Experiences.
-                    </h1>
-                    <p className="stagger-3" style={{ fontSize: '1.25rem', marginBottom: '2.5rem', opacity: 0.8 }}>
-                        I'm a Full-Stack Developer & UI/UX Designer specialized in building
-                        premium web applications with high performance and cinematic design.
+            <section className="hero">
+                <h1>Souradip (Sobi) Biswas</h1>
+                <p className="tagline">
+                    AI / ML Systems &bull; Applied AI &bull; Creative Tooling
+                </p>
+                <div className="hero-sub">
+                    <p>
+                        AI-focused developer and researcher building applied systems rather than toy demos.
+                        <br />
+                        College student, independent developer, researcher-oriented.
                     </p>
-                    <div className="stagger-3 hero-btns">
-                        <a href="#work" className="btn">View Work</a>
-                        <a href="#contact" className="btn btn-secondary">Get in Touch</a>
-                    </div>
+                </div>
+                <div className="social-links">
+                    <a href="https://github.com/sobiswriter" target="_blank" rel="noopener noreferrer" className="btn">
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/sobiswriter/" target="_blank" rel="noopener noreferrer" className="btn">
+                        LinkedIn
+                    </a>
                 </div>
             </section>
 
-            {/* Projects Section */}
-            <section id="work" className="container">
-                <div className="reveal">
-                    <h2 style={{ fontSize: '3rem', marginBottom: '3rem' }}>Selected Work</h2>
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                        gap: '2rem'
-                    }}>
-                        {projects.map((project, i) => (
-                            <div key={i} className="glass-card" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                                <div style={{
-                                    height: '200px',
-                                    background: `linear-gradient(45deg, ${project.color}22, ${project.color}44)`,
-                                    borderRadius: '12px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontSize: '3rem'
-                                }}>
-                                    ✨
-                                </div>
-                                <h3 style={{ fontSize: '1.5rem', fontWeight: 600 }}>{project.title}</h3>
-                                <p style={{ fontSize: '1rem' }}>{project.description}</p>
-                                <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto' }}>
-                                    {project.tech.map((t, ii) => (
-                                        <span key={ii} style={{
-                                            fontSize: '0.75rem',
-                                            padding: '0.25rem 0.75rem',
-                                            borderRadius: '100px',
-                                            background: 'rgba(255,255,255,0.05)',
-                                            border: '1px solid var(--card-border)'
-                                        }}>{t}</span>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+            {/* Professional Overview */}
+            <section id="about">
+                <h2>Professional Overview</h2>
+                <div className="space-y-4 text-slate-300 text-lg">
+                    <p>
+                        I am an AI-focused developer and researcher dedicated to building applied systems rather than just prototypes.
+                        My work is driven by a strong interest in <span className="text-primary font-semibold">document intelligence, generative AI, NLP, and persona-based systems</span>.
+                    </p>
+                    <p>
+                        I combine <span className="text-primary font-semibold">AI + interfaces + tooling</span> into complete end-to-end products, and I am comfortable with
+                        experimentation, iteration, and rebuilding systems from scratch to achieve the best architecture.
+                    </p>
                 </div>
             </section>
 
-            {/* About Section */}
-            <section id="about" className="container">
-                <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
-                    <div>
-                        <h2 style={{ fontSize: '3rem', marginBottom: '2rem' }}>About Me</h2>
-                        <p style={{ marginBottom: '1.5rem' }}>
-                            I believe that design and code should live in harmony. With over 5 years of experience,
-                            I've worked with startups and established brands to create digital products
-                            that aren't just functional, but memorable.
-                        </p>
-                        <p>
-                            My stack includes React, Next.js, Node.js, and I have a deep passion for
-                            interactive design and motion.
-                        </p>
+            {/* Technical Skills */}
+            <section id="skills">
+                <h2>Technical Skills</h2>
+
+                <div className="grid">
+                    <div className="skill-category">
+                        <h3 className="mb-2">Programming Languages</h3>
+                        <div className="skill-list">
+                            <span className="skill-item">Python</span>
+                            <span className="skill-item">TypeScript</span>
+                            <span className="skill-item">JavaScript</span>
+                            <span className="skill-item">PowerShell</span>
+                            <span className="skill-item">Java (Familiarity)</span>
+                        </div>
                     </div>
-                    <div className="glass-card" style={{ height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <div style={{ textAlign: 'center' }}>
-                            <p style={{ color: 'var(--foreground)', fontSize: '4rem', fontWeight: 800 }}>5+</p>
-                            <p>Years Experience</p>
+
+                    <div className="skill-category">
+                        <h3 className="mb-2">AI / Machine Learning</h3>
+                        <div className="skill-list">
+                            <span className="skill-item">NLP & GenAI</span>
+                            <span className="skill-item">Document Analysis</span>
+                            <span className="skill-item">Transformers (Applied)</span>
+                            <span className="skill-item">AI Rewriting Pipelines</span>
+                        </div>
+                    </div>
+
+                    <div className="skill-category">
+                        <h3 className="mb-2">Application Development</h3>
+                        <div className="skill-list">
+                            <span className="skill-item">Electron (Desktop)</span>
+                            <span className="skill-item">Tkinter</span>
+                            <span className="skill-item">Node.js & Next.js</span>
+                            <span className="skill-item">UI/UX Logic for AI</span>
+                            <span className="skill-item">API Architectures</span>
+                        </div>
+                    </div>
+
+                    <div className="skill-category">
+                        <h3 className="mb-2">Systems & Tooling</h3>
+                        <div className="skill-list">
+                            <span className="skill-item">Modular AI Design</span>
+                            <span className="skill-item">Automation Pipelines</span>
+                            <span className="skill-item">CLI & PowerShell Utils</span>
+                            <span className="skill-item">3rd Party Integrations</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Skills Section */}
-            <section id="skills" className="container">
-                <div className="reveal">
-                    <h2 style={{ fontSize: '3rem', marginBottom: '3rem' }}>Tech Stack</h2>
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
-                        gap: '1.5rem'
-                    }}>
-                        {['React', 'Next.js', 'Typescript', 'Node.js', 'PostgreSQL', 'Framer Motion', 'Cloudflare', 'Python'].map((skill, i) => (
-                            <div key={i} className="glass-card" style={{ padding: '1.5rem', textAlign: 'center', transition: 'all 0.3s ease' }}>
-                                <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>⚡</div>
-                                <div style={{ fontWeight: 600 }}>{skill}</div>
+            {/* Major Projects */}
+            <section id="projects">
+                <h2>Major Projects</h2>
+                <div className="grid">
+
+                    {/* LegalLM */}
+                    <div className="card">
+                        <div className="card-content">
+                            <div className="card-header">
+                                <h3>LegalLM</h3>
+                                <span className="type-badge">AI Application</span>
                             </div>
-                        ))}
+                            <p className="text-sm text-slate-400 mb-2">Featured Flagship Project</p>
+                            <p className="text-slate-300 text-sm">
+                                AI-driven platform for uploading, parsing, and analyzing legal documents using NLP-based approaches.
+                            </p>
+                        </div>
+                        <div className="tech-stack">
+                            <span className="tech-tag">TypeScript</span>
+                            <span className="tech-tag">AI/NLP Stack</span>
+                        </div>
+                    </div>
+
+                    {/* Project AIC */}
+                    <div className="card">
+                        <div className="card-content">
+                            <div className="card-header">
+                                <h3>Project AIC</h3>
+                                <span className="type-badge">AI Bot / System</span>
+                            </div>
+                            <p className="text-sm text-slate-400 mb-2">Core Long-term Personal Project</p>
+                            <p className="text-slate-300 text-sm">
+                                Python-based intelligent bot system exploring behavior, interaction, and decision logic.
+                            </p>
+                        </div>
+                        <div className="tech-stack">
+                            <span className="tech-tag">Python</span>
+                        </div>
+                    </div>
+
+                    {/* The Shadow Diary */}
+                    <div className="card">
+                        <div className="card-content">
+                            <div className="card-header">
+                                <h3>The Shadow Diary</h3>
+                                <span className="type-badge">AI Journaling</span>
+                            </div>
+                            <p className="text-slate-300 text-sm">
+                                Journaling platform that uses AI to rewrite and reinterpret entries, inspired by psychological and Jungian themes.
+                            </p>
+                        </div>
+                        <div className="tech-stack">
+                            <span className="tech-tag">TypeScript</span>
+                        </div>
+                    </div>
+
+                    {/* PersonaVerse */}
+                    <div className="card">
+                        <div className="card-content">
+                            <div className="card-header">
+                                <h3>PersonaVerse</h3>
+                                <span className="type-badge">Desktop AI App</span>
+                            </div>
+                            <p className="text-slate-300 text-sm">
+                                Persona creation and interaction playground enabling users to build and converse with AI-driven personalities.
+                            </p>
+                        </div>
+                        <div className="tech-stack">
+                            <span className="tech-tag">Node.js</span>
+                            <span className="tech-tag">Electron</span>
+                        </div>
+                    </div>
+
+                    {/* AI Overlay */}
+                    <div className="card">
+                        <div className="card-content">
+                            <div className="card-header">
+                                <h3>AI Overlay</h3>
+                                <span className="type-badge">Desktop Utility</span>
+                            </div>
+                            <p className="text-slate-300 text-sm">
+                                Lightweight AI overlay tool designed for productivity and real-time assistance.
+                            </p>
+                        </div>
+                        <div className="tech-stack">
+                            <span className="tech-tag">Python</span>
+                            <span className="tech-tag">Tkinter</span>
+                        </div>
+                    </div>
+
+                    {/* Inviter */}
+                    <div className="card">
+                        <div className="card-content">
+                            <div className="card-header">
+                                <h3>Inviter</h3>
+                                <span className="type-badge">Web Application</span>
+                            </div>
+                            <p className="text-slate-300 text-sm">
+                                Invitation management system integrating messaging and email services for automated communication workflows.
+                            </p>
+                        </div>
+                        <div className="tech-stack">
+                            <span className="tech-tag">Node.js</span>
+                            <span className="tech-tag">Next.js</span>
+                            <span className="tech-tag">Twilio</span>
+                            <span className="tech-tag">SMTP APIs</span>
+                        </div>
+                    </div>
+
+                    {/* Business Venture App */}
+                    <div className="card">
+                        <div className="card-content">
+                            <div className="card-header">
+                                <h3>Business Venture App</h3>
+                                <span className="type-badge">Desktop Application</span>
+                            </div>
+                            <p className="text-slate-300 text-sm">
+                                Business-focused application supporting financial tracking, reporting, and internal workflows.
+                            </p>
+                        </div>
+                        <div className="tech-stack">
+                            <span className="tech-tag">Node.js</span>
+                            <span className="tech-tag">Electron</span>
+                        </div>
+                    </div>
+
+                    {/* Cosmos Anomaly */}
+                    <div className="card">
+                        <div className="card-content">
+                            <div className="card-header">
+                                <h3>Cosmos Anomaly</h3>
+                                <span className="type-badge">Experimental System</span>
+                            </div>
+                            <p className="text-slate-300 text-sm">
+                                Narrative-driven and system-oriented project exploring timeline manipulation and anomaly-based logic.
+                            </p>
+                        </div>
+                        <div className="tech-stack">
+                            <span className="tech-tag">TypeScript</span>
+                        </div>
+                    </div>
+
+                    {/* Timeline Twist (V2) */}
+                    <div className="card">
+                        <div className="card-content">
+                            <div className="card-header">
+                                <h3>Timeline Twist (V2)</h3>
+                                <span className="type-badge">Iterative System</span>
+                            </div>
+                            <p className="text-slate-300 text-sm">
+                                Second iteration of a timeline-based project, emphasizing refactoring and architectural improvement.
+                            </p>
+                        </div>
+                        <div className="tech-stack">
+                            <span className="tech-tag">TypeScript</span>
+                        </div>
+                    </div>
+
+                    {/* PowerShell Utility Suite */}
+                    <div className="card">
+                        <div className="card-content">
+                            <div className="card-header">
+                                <h3>PS Utility Suite</h3>
+                                <span className="type-badge">Automation Tool Collection</span>
+                            </div>
+                            <p className="text-slate-300 text-sm">
+                                Collection of PowerShell modules including web scraping, scheduling, stopwatch utilities, image editing, and automation tools.
+                            </p>
+                        </div>
+                        <div className="tech-stack">
+                            <span className="tech-tag">PowerShell</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            {/* Experience & Achievements */}
+            <section id="achievements">
+                <h2>Experience & Recognition</h2>
+
+                <div className="card mb-8">
+                    <div className="card-header px-0 pt-0">
+                        <h3 className="text-primary">Collaborations & Programs</h3>
+                    </div>
+                    <ul className="list-disc list-inside text-slate-300 space-y-2">
+                        <li>
+                            <strong className="text-white">India Accelerator – OpenXAI 2025</strong>
+                            <br />
+                            <span className="text-sm ml-5 block text-slate-400">
+                                Collaborative project under Blockseblock Labs. Participation in accelerator-style development environment. Focus on scalable AI system development.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="grid">
+                    <div className="card">
+                        <h3>Achievements</h3>
+                        <ul className="list-disc pl-4 mt-4 space-y-2 text-sm text-slate-300">
+                            <li><strong className="text-white">Patent Publication (IPR)</strong>: Published a patent demonstrating original technical innovation and applied research.</li>
+                            <li><strong className="text-white">Tech Fest – IIT Ropar</strong>: Recognition for technical performance and innovation.</li>
+                            <li><strong className="text-white">Hackathons & Ideathons</strong>: Winner/participant in multiple events involving rapid prototyping and problem-solving.</li>
+                        </ul>
+                    </div>
+                    <div className="card">
+                        <h3>Public Presence & Signals</h3>
+                        <ul className="list-disc pl-4 mt-4 space-y-2 text-sm text-slate-300">
+                            <li><strong className="text-white">HackerRank</strong>: 5★ in Problem Solving, 5★ in Python.</li>
+                            <li><strong className="text-white">Conference Participation</strong>: Attended ODDO Meet (Gandhinagar) and IMC Conference (Delhi).</li>
+                            <li><strong className="text-white">GitHub & LinkedIn</strong>: Active profile with multiple featured projects, stars, and technical posts on AI systems/interfaces.</li>
+                            <li><strong className="text-white">Core Themes</strong>: "AI as a system, not a demo" & "Persona, identity, and behavior modeling".</li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
-            {/* Footer / Contact */}
-            <footer id="contact" style={{ padding: '80px 0', borderTop: '1px solid var(--card-border)' }}>
-                <div className="container" style={{ textAlign: 'center' }}>
-                    <h2 style={{ fontSize: '4rem', marginBottom: '2rem' }}>Let's Build Something.</h2>
-                    <a href="mailto:hello@example.com" className="btn" style={{ fontSize: '1.25rem', padding: '1.5rem 3rem' }}>
-                        Start a Conversation
-                    </a>
-                    <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center', gap: '2rem', opacity: 0.5 }}>
-                        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Twitter</a>
-                        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>GitHub</a>
-                        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>LinkedIn</a>
-                    </div>
+            {/* Footer */}
+            <footer className="footer">
+                <p>&copy; {new Date().getFullYear()} Souradip Biswas. Built with Next.js.</p>
+                <div className="mt-4">
+                    <a href="https://github.com/sobiswriter" className="mx-3 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://www.linkedin.com/in/sobiswriter/" className="mx-3 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </footer>
-
         </main>
     );
 }
