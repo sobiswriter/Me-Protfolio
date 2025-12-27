@@ -1,11 +1,35 @@
 :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark Mode (Default) */
+    --background: #050505;
+    --foreground: #f2f2f2;
     --primary: #3b82f6;
+    /* Electric Blue */
+    --primary-glow: rgba(59, 130, 246, 0.5);
     --secondary: #94a3b8;
-    --card-bg: #171717;
-    --card-border: #262626;
-    --accent: #2563eb;
+    /* Slate */
+    --card-bg: rgba(20, 20, 20, 0.6);
+    --card-border: #333333;
+    --accent: #06b6d4;
+    /* Cyan */
+    --grid-color: rgba(255, 255, 255, 0.05);
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    --font-sans: 'Inter', sans-serif;
+}
+
+[data-theme='light'] {
+    /* Light Mode */
+    --background: #ffffff;
+    --foreground: #0f172a;
+    --primary: #2563eb;
+    /* Darker Blue for contrast */
+    --primary-glow: rgba(37, 99, 235, 0.3);
+    --secondary: #64748b;
+    /* Darker Slate */
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --card-border: #e2e8f0;
+    --accent: #0891b2;
+    /* Darker Cyan */
+    --grid-color: rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -20,80 +44,399 @@ body {
     overflow-x: hidden;
     background-color: var(--background);
     color: var(--foreground);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: var(--font-sans);
     line-height: 1.6;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Background Grid Animation */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    pointer-events: none;
 }
 
 a {
     color: inherit;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 a:hover {
     color: var(--primary);
+    text-shadow: 0 0 8px var(--primary-glow);
 }
 
 section {
-    padding: 4rem 1.5rem;
+    padding: 6rem 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Typography */
 h1,
 h2,
 h3,
 h4 {
     line-height: 1.2;
     margin-bottom: 1rem;
+    letter-spacing: -0.02em;
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 800;
-    letter-spacing: -0.02em;
-    background: linear-gradient(to right, #fff, #94a3b8);
+    background: linear-gradient(to right, var(--foreground), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--card-border);
-    padding-bottom: 0.5rem;
-    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
 }
 
 h3 {
     font-size: 1.25rem;
-    font-weight: 600;
-    color: #fff;
+    font-weight: 700;
+    color: var(--foreground);
 }
 
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    color: var(--foreground);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(to right, var(--foreground), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -1px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, var(--foreground), var(--secondary));
+    /* match parent gradient */
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -1px 0 #00fff9;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, var(--foreground), var(--secondary));
+    z-index: -2;
+    opacity: 0.8;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(31px, 9999px, 94px, 0);
+        transform: skew(0.85deg);
+    }
+
+    5% {
+        clip: rect(70px, 9999px, 11px, 0);
+        transform: skew(0.71deg);
+    }
+
+    10% {
+        clip: rect(25px, 9999px, 86px, 0);
+        transform: skew(0.39deg);
+    }
+
+    15% {
+        clip: rect(7px, 9999px, 20px, 0);
+        transform: skew(0.04deg);
+    }
+
+    20% {
+        clip: rect(48px, 9999px, 82px, 0);
+        transform: skew(0.24deg);
+    }
+
+    25% {
+        clip: rect(11px, 9999px, 89px, 0);
+        transform: skew(0.76deg);
+    }
+
+    30% {
+        clip: rect(78px, 9999px, 23px, 0);
+        transform: skew(0.43deg);
+    }
+
+    35% {
+        clip: rect(4px, 9999px, 95px, 0);
+        transform: skew(0.66deg);
+    }
+
+    40% {
+        clip: rect(38px, 9999px, 2px, 0);
+        transform: skew(0.25deg);
+    }
+
+    45% {
+        clip: rect(73px, 9999px, 99px, 0);
+        transform: skew(0.81deg);
+    }
+
+    50% {
+        clip: rect(61px, 9999px, 47px, 0);
+        transform: skew(0.57deg);
+    }
+
+    55% {
+        clip: rect(10px, 9999px, 60px, 0);
+        transform: skew(0.26deg);
+    }
+
+    60% {
+        clip: rect(36px, 9999px, 35px, 0);
+        transform: skew(0.95deg);
+    }
+
+    65% {
+        clip: rect(81px, 9999px, 49px, 0);
+        transform: skew(0.59deg);
+    }
+
+    70% {
+        clip: rect(67px, 9999px, 42px, 0);
+        transform: skew(0.19deg);
+    }
+
+    75% {
+        clip: rect(63px, 9999px, 41px, 0);
+        transform: skew(0.53deg);
+    }
+
+    80% {
+        clip: rect(52px, 9999px, 68px, 0);
+        transform: skew(0.73deg);
+    }
+
+    85% {
+        clip: rect(98px, 9999px, 34px, 0);
+        transform: skew(0.48deg);
+    }
+
+    90% {
+        clip: rect(59px, 9999px, 6px, 0);
+        transform: skew(0.97deg);
+    }
+
+    95% {
+        clip: rect(81px, 9999px, 36px, 0);
+        transform: skew(0.74deg);
+    }
+
+    100% {
+        clip: rect(5px, 9999px, 62px, 0);
+        transform: skew(0.33deg);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip: rect(65px, 9999px, 100px, 0);
+        transform: skew(0.4deg);
+    }
+
+    5% {
+        clip: rect(52px, 9999px, 74px, 0);
+        transform: skew(0.18deg);
+    }
+
+    10% {
+        clip: rect(79px, 9999px, 85px, 0);
+        transform: skew(0.06deg);
+    }
+
+    15% {
+        clip: rect(14px, 9999px, 6px, 0);
+        transform: skew(0.35deg);
+    }
+
+    20% {
+        clip: rect(57px, 9999px, 26px, 0);
+        transform: skew(0.58deg);
+    }
+
+    25% {
+        clip: rect(27px, 9999px, 25px, 0);
+        transform: skew(0.85deg);
+    }
+
+    30% {
+        clip: rect(24px, 9999px, 5px, 0);
+        transform: skew(0.31deg);
+    }
+
+    35% {
+        clip: rect(4px, 9999px, 7px, 0);
+        transform: skew(0.87deg);
+    }
+
+    40% {
+        clip: rect(78px, 9999px, 92px, 0);
+        transform: skew(0.75deg);
+    }
+
+    45% {
+        clip: rect(68px, 9999px, 41px, 0);
+        transform: skew(0.56deg);
+    }
+
+    50% {
+        clip: rect(78px, 9999px, 90px, 0);
+        transform: skew(0.35deg);
+    }
+
+    55% {
+        clip: rect(48px, 9999px, 92px, 0);
+        transform: skew(0.82deg);
+    }
+
+    60% {
+        clip: rect(13px, 9999px, 19px, 0);
+        transform: skew(0.91deg);
+    }
+
+    65% {
+        clip: rect(43px, 9999px, 90px, 0);
+        transform: skew(0.16deg);
+    }
+
+    70% {
+        clip: rect(19px, 9999px, 32px, 0);
+        transform: skew(0.79deg);
+    }
+
+    75% {
+        clip: rect(40px, 9999px, 66px, 0);
+        transform: skew(0.15deg);
+    }
+
+    80% {
+        clip: rect(26px, 9999px, 20px, 0);
+        transform: skew(0.45deg);
+    }
+
+    85% {
+        clip: rect(31px, 9999px, 93px, 0);
+        transform: skew(0.04deg);
+    }
+
+    90% {
+        clip: rect(96px, 9999px, 7px, 0);
+        transform: skew(0.46deg);
+    }
+
+    95% {
+        clip: rect(35px, 9999px, 5px, 0);
+        transform: skew(0.14deg);
+    }
+
+    100% {
+        clip: rect(51px, 9999px, 38px, 0);
+        transform: skew(0.66deg);
+    }
+}
+
+/* Hero Section */
 .hero {
-    min-height: 80vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 6rem;
+    position: relative;
+    z-index: 1;
 }
 
 .tagline {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--primary);
     margin-bottom: 1.5rem;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+}
+
+.tagline::after {
+    content: "|";
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 .hero-sub {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     color: var(--secondary);
     max-width: 650px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
+    border-left: 2px solid var(--card-border);
+    padding-left: 1.5rem;
 }
 
 .social-links {
@@ -102,41 +445,85 @@ h3 {
 }
 
 .btn {
-    padding: 0.75rem 1.5rem;
+    padding: 0.8rem 2rem;
     border-radius: 8px;
     font-weight: 600;
-    background: var(--card-bg);
+    background: rgba(255, 255, 255, 0.05);
+    /* slightly visible bg */
     border: 1px solid var(--card-border);
-    transition: all 0.2s;
-    color: #fff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--foreground);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
 }
 
 .btn:hover {
-    background: var(--card-border);
+    background: rgba(59, 130, 246, 0.1);
     border-color: var(--primary);
     transform: translateY(-2px);
+    box-shadow: 0 4px 20px -5px var(--primary-glow);
 }
 
+/* Cards & Grid */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 2rem;
+}
+
+/* Fade In Animation for Cards */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: transform 0.2s, border-color 0.2s;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     height: 100%;
     display: flex;
     flex-direction: column;
+    backdrop-filter: blur(12px);
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 0.6s ease-out forwards;
 }
 
+/* Stagger animation for grid items if possible, or just default fade */
+
 .card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-8px);
     border-color: var(--primary);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+/* Card Glow Effect inside */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover::before {
+    opacity: 1;
 }
 
 .card-header {
@@ -159,63 +546,52 @@ h3 {
     border-radius: 99px;
     border: 1px solid rgba(59, 130, 246, 0.2);
     white-space: nowrap;
+    font-family: var(--font-mono);
+    letter-spacing: -0.02em;
 }
 
+/* Tech Stack */
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
+    gap: 0.6rem;
+    margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--card-border);
 }
 
 .tech-tag {
     font-size: 0.75rem;
     color: var(--secondary);
-    background: #262626;
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    border: 1px solid #333;
-}
-
-.skill-category {
-    margin-bottom: 1rem;
-}
-
-.skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-}
-
-.skill-item {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.3rem 0.7rem;
     border-radius: 6px;
-    font-size: 0.9rem;
-    color: #e2e8f0;
+    border: 1px solid transparent;
+    transition: all 0.2s;
 }
 
-.footer {
-    text-align: center;
-    padding: 3rem 1.5rem;
-    color: var(--secondary);
-    border-top: 1px solid var(--card-border);
-    margin-top: 4rem;
+.card:hover .tech-tag {
+    border-color: var(--card-border);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--foreground);
 }
 
+/* Utilities */
 .text-primary {
-    color: var(--primary);
+    color: var(--primary) !important;
+}
+
+.text-accent {
+    color: var(--accent);
 }
 
 .text-slate-300 {
-    color: #cbd5e1;
+    color: var(--foreground);
+    opacity: 0.9;
 }
 
 .text-slate-400 {
-    color: #94a3b8;
+    color: var(--secondary);
 }
 
 .mb-2 {
@@ -274,8 +650,65 @@ h3 {
     font-weight: 600;
 }
 
+/* Skills */
+.skill-category h3 {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--foreground);
+    transition: all 0.2s;
+    cursor: default;
+}
+
+.skill-item:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    color: var(--secondary);
+    border-top: 1px solid var(--card-border);
+    margin-top: 6rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+}
+
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hero {
+        padding-top: 4rem;
+        min-height: auto;
+        padding-bottom: 4rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
     }
 }
