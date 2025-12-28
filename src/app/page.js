@@ -38,7 +38,7 @@ export default function Home() {
                 <ThemeToggle />
 
                 {/* Hero Section */}
-                <section className="hero">
+                <section id="hero" className="hero">
                     <h1>Souradip (Sobi) Biswas</h1>
                     <p className="tagline">
                         AI / ML Systems • Applied AI • Creative Tooling
@@ -128,175 +128,147 @@ export default function Home() {
                 <section id="projects">
                     <h2>Major Projects</h2>
                     <div className="bento-grid">
-
-                        {/* LegalLM */}
-                        <div className="card">
-                            <div className="card-content">
-                                <div className="card-header">
-                                    <h3>LegalLM</h3>
-                                    <span className="type-badge">AI Application</span>
+                        {
+                            [
+                                {
+                                    title: "CosmicCanvas",
+                                    type: "Experimental UI",
+                                    desc: "Generative Art & Color Playground",
+                                    summary: "A dynamic canvas to draw and experiment with colors, fluid geometry, and interactive patterns.",
+                                    details: "Built to explore WebGL-based color blending and procedural strokes. It serves as a creative playground for digital art experiments.",
+                                    stack: ["JavaScript", "WebGL", "Canvas API"],
+                                    github: "https://github.com/sobiswriter/CosmicCanvas",
+                                    demo: "https://sobiswriter.github.io/CosmicCanvas/"
+                                },
+                                {
+                                    title: "LegalLM",
+                                    type: "AI Application",
+                                    desc: "Featured Flagship Project",
+                                    summary: "AI-driven platform for uploading, parsing, and analyzing legal documents using NLP-based approaches.",
+                                    details: "Leverages large language models to extract key clauses, identify risks, and summarize complex legal jargon into actionable insights. Built for speed and accuracy.",
+                                    stack: ["TypeScript", "AI/NLP Stack", "Next.js"],
+                                    github: "https://github.com/sobiswriter/LegalLM",
+                                    demo: "https://legal-lmx24-git-main-sobiswriters-projects.vercel.app/"
+                                },
+                                {
+                                    title: "Project AIC",
+                                    type: "AI Bot / System",
+                                    desc: "Core Long-term Personal Project",
+                                    summary: "Python-based intelligent bot system exploring behavior, interaction, and decision logic.",
+                                    details: "An experimental autonomous agent designed to simulate long-term memory and adaptive personality traits. Focuses on 'ghost in the machine' behavioral patterns.",
+                                    stack: ["Python", "PyTorch", "Transformers"],
+                                    github: "https://github.com/sobiswriter/Project-AIC"
+                                },
+                                {
+                                    title: "The Shadow Diary",
+                                    type: "AI Journaling",
+                                    desc: "Psychological AI Tool",
+                                    summary: "Journaling platform that uses AI to rewrite and reinterpret entries, inspired by psychological and Jungian themes.",
+                                    details: "Transforms raw user thoughts into structured narratives, offering psychoanalytic perspectives (e.g., Shadow Work). Features a moody, immersive interface.",
+                                    stack: ["TypeScript", "Next.js", "OpenAI API"],
+                                    github: "https://github.com/sobiswriter/The-Shadow-Diary",
+                                    demo: "https://the-shadow-diary.vercel.app/"
+                                },
+                                {
+                                    title: "PersonaVerse",
+                                    type: "Desktop AI App",
+                                    desc: "Interactive Playground",
+                                    summary: "Persona creation and interaction playground enabling users to build and converse with AI-driven personalities.",
+                                    details: "A comprehensive tool for drafting character backstories, voice settings, and behavioral constraints. Includes a real-time chat simulation environment.",
+                                    stack: ["Node.js", "Electron", "React"],
+                                    github: "https://github.com/sobiswriter/PersonaVerse"
+                                },
+                                {
+                                    title: "AI Overlay",
+                                    type: "Desktop Utility",
+                                    desc: "Productivity Tool",
+                                    summary: "Lightweight AI overlay tool designed for productivity and real-time assistance.",
+                                    details: "Hover-based AI assistant that functions as a smart layer over your OS. capable of reading screen context and providing instant answers.",
+                                    stack: ["Python", "Tkinter", "OCR"],
+                                    github: "https://github.com/sobiswriter/AI-Overlay"
+                                },
+                                {
+                                    title: "Inviter",
+                                    type: "Web Application",
+                                    desc: "Event Management",
+                                    summary: "Invitation management system integrating messaging and email services for automated communication workflows.",
+                                    details: "Streamlines the RSVP process with automated follow-ups via SMS and Email. Includes a dashboard for tracking guest status in real-time.",
+                                    stack: ["Node.js", "Next.js", "Twilio", "SMTP"],
+                                    github: "https://github.com/sobiswriter/Inviter"
+                                },
+                                {
+                                    title: "Business Venture App",
+                                    type: "Desktop Application",
+                                    desc: "Enterprise Solution",
+                                    summary: "Business-focused application supporting financial tracking, reporting, and internal workflows.",
+                                    details: "Secure desktop environment for managing accounts, generating invoice PDFs, and visualizing cash flow data.",
+                                    stack: ["Node.js", "Electron", "SQLite"],
+                                    github: "https://github.com/sobiswriter/Business-Venture-App"
+                                },
+                                {
+                                    title: "Cosmos Anomaly",
+                                    type: "Experimental System",
+                                    desc: "Narrative Engine",
+                                    summary: "Narrative-driven and system-oriented project exploring timeline manipulation and anomaly-based logic.",
+                                    details: "A game-like simulation where users influence the timeline, causing ripple effects (anomalies). Heavily relies on graph-based state management.",
+                                    stack: ["TypeScript", "WebGL", "State Machines"],
+                                    github: "https://github.com/sobiswriter/Cosmos-Anomaly",
+                                    demo: "https://time-line-twist-v2.vercel.app/"
+                                },
+                                {
+                                    title: "Timeline Twist (V2)",
+                                    type: "Iterative System",
+                                    desc: "System Refactor",
+                                    summary: "Second iteration of a timeline-based project, emphasizing refactoring and architectural improvement.",
+                                    details: "Focused on clean architecture and performance, rebuilding the core timeline engine to support infinite branching.",
+                                    stack: ["TypeScript", "React", "Redux"],
+                                    github: "https://github.com/sobiswriter/TimeLine-Twist-V2",
+                                    demo: "https://time-line-twist-v2.vercel.app/"
+                                },
+                                {
+                                    title: "PS Utility Suite",
+                                    type: "Automation Tool Collection",
+                                    desc: "DevOps / Scripting",
+                                    summary: "Collection of PowerShell modules including web scraping, scheduling, stopwatch utilities, and automation tools.",
+                                    details: "A power-user toolkit for Windows, automating mundane tasks like file organization, data scraping, and system monitoring.",
+                                    stack: ["PowerShell", ".NET"],
+                                    github: "https://github.com/sobiswriter/PowerShell-Utility-Suite"
+                                }
+                            ].map((project, index) => (
+                                <div key={index} className="card">
+                                    <div className="card-content">
+                                        <div className="card-header">
+                                            <h3>{project.title}</h3>
+                                            <span className="type-badge">{project.type}</span>
+                                        </div>
+                                        <p className="text-sm text-slate-400 mb-2">{project.desc}</p>
+                                        <p className="text-slate-300 text-sm">
+                                            {project.summary}
+                                        </p>
+                                        <div className="card-reveal">
+                                            <p>{project.details}</p>
+                                            <div className="card-actions">
+                                                {project.github && (
+                                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="action-btn github">
+                                                        GitHub
+                                                    </a>
+                                                )}
+                                                {project.demo && (
+                                                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="action-btn demo">
+                                                        Live Demo
+                                                    </a>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="tech-stack">
+                                        {project.stack.map((tech, i) => (
+                                            <span key={i} className="tech-tag">{tech}</span>
+                                        ))}
+                                    </div>
                                 </div>
-                                <p className="text-sm text-slate-400 mb-2">Featured Flagship Project</p>
-                                <p className="text-slate-300 text-sm">
-                                    AI-driven platform for uploading, parsing, and analyzing legal documents using NLP-based approaches.
-                                </p>
-                            </div>
-                            <div className="tech-stack">
-                                <span className="tech-tag">TypeScript</span>
-                                <span className="tech-tag">AI/NLP Stack</span>
-                            </div>
-                        </div>
-
-                        {/* Project AIC */}
-                        <div className="card">
-                            <div className="card-content">
-                                <div className="card-header">
-                                    <h3>Project AIC</h3>
-                                    <span className="type-badge">AI Bot / System</span>
-                                </div>
-                                <p className="text-sm text-slate-400 mb-2">Core Long-term Personal Project</p>
-                                <p className="text-slate-300 text-sm">
-                                    Python-based intelligent bot system exploring behavior, interaction, and decision logic.
-                                </p>
-                            </div>
-                            <div className="tech-stack">
-                                <span className="tech-tag">Python</span>
-                            </div>
-                        </div>
-
-                        {/* The Shadow Diary */}
-                        <div className="card">
-                            <div className="card-content">
-                                <div className="card-header">
-                                    <h3>The Shadow Diary</h3>
-                                    <span className="type-badge">AI Journaling</span>
-                                </div>
-                                <p className="text-slate-300 text-sm">
-                                    Journaling platform that uses AI to rewrite and reinterpret entries, inspired by psychological and Jungian themes.
-                                </p>
-                            </div>
-                            <div className="tech-stack">
-                                <span className="tech-tag">TypeScript</span>
-                            </div>
-                        </div>
-
-                        {/* PersonaVerse */}
-                        <div className="card">
-                            <div className="card-content">
-                                <div className="card-header">
-                                    <h3>PersonaVerse</h3>
-                                    <span className="type-badge">Desktop AI App</span>
-                                </div>
-                                <p className="text-slate-300 text-sm">
-                                    Persona creation and interaction playground enabling users to build and converse with AI-driven personalities.
-                                </p>
-                            </div>
-                            <div className="tech-stack">
-                                <span className="tech-tag">Node.js</span>
-                                <span className="tech-tag">Electron</span>
-                            </div>
-                        </div>
-
-                        {/* AI Overlay */}
-                        <div className="card">
-                            <div className="card-content">
-                                <div className="card-header">
-                                    <h3>AI Overlay</h3>
-                                    <span className="type-badge">Desktop Utility</span>
-                                </div>
-                                <p className="text-slate-300 text-sm">
-                                    Lightweight AI overlay tool designed for productivity and real-time assistance.
-                                </p>
-                            </div>
-                            <div className="tech-stack">
-                                <span className="tech-tag">Python</span>
-                                <span className="tech-tag">Tkinter</span>
-                            </div>
-                        </div>
-
-                        {/* Inviter */}
-                        <div className="card">
-                            <div className="card-content">
-                                <div className="card-header">
-                                    <h3>Inviter</h3>
-                                    <span className="type-badge">Web Application</span>
-                                </div>
-                                <p className="text-slate-300 text-sm">
-                                    Invitation management system integrating messaging and email services for automated communication workflows.
-                                </p>
-                            </div>
-                            <div className="tech-stack">
-                                <span className="tech-tag">Node.js</span>
-                                <span className="tech-tag">Next.js</span>
-                                <span className="tech-tag">Twilio</span>
-                                <span className="tech-tag">SMTP APIs</span>
-                            </div>
-                        </div>
-
-                        {/* Business Venture App */}
-                        <div className="card">
-                            <div className="card-content">
-                                <div className="card-header">
-                                    <h3>Business Venture App</h3>
-                                    <span className="type-badge">Desktop Application</span>
-                                </div>
-                                <p className="text-slate-300 text-sm">
-                                    Business-focused application supporting financial tracking, reporting, and internal workflows.
-                                </p>
-                            </div>
-                            <div className="tech-stack">
-                                <span className="tech-tag">Node.js</span>
-                                <span className="tech-tag">Electron</span>
-                            </div>
-                        </div>
-
-                        {/* Cosmos Anomaly */}
-                        <div className="card">
-                            <div className="card-content">
-                                <div className="card-header">
-                                    <h3>Cosmos Anomaly</h3>
-                                    <span className="type-badge">Experimental System</span>
-                                </div>
-                                <p className="text-slate-300 text-sm">
-                                    Narrative-driven and system-oriented project exploring timeline manipulation and anomaly-based logic.
-                                </p>
-                            </div>
-                            <div className="tech-stack">
-                                <span className="tech-tag">TypeScript</span>
-                            </div>
-                        </div>
-
-                        {/* Timeline Twist (V2) */}
-                        <div className="card">
-                            <div className="card-content">
-                                <div className="card-header">
-                                    <h3>Timeline Twist (V2)</h3>
-                                    <span className="type-badge">Iterative System</span>
-                                </div>
-                                <p className="text-slate-300 text-sm">
-                                    Second iteration of a timeline-based project, emphasizing refactoring and architectural improvement.
-                                </p>
-                            </div>
-                            <div className="tech-stack">
-                                <span className="tech-tag">TypeScript</span>
-                            </div>
-                        </div>
-
-                        {/* PowerShell Utility Suite */}
-                        <div className="card">
-                            <div className="card-content">
-                                <div className="card-header">
-                                    <h3>PS Utility Suite</h3>
-                                    <span className="type-badge">Automation Tool Collection</span>
-                                </div>
-                                <p className="text-slate-300 text-sm">
-                                    Collection of PowerShell modules including web scraping, scheduling, stopwatch utilities, image editing, and automation tools.
-                                </p>
-                            </div>
-                            <div className="tech-stack">
-                                <span className="tech-tag">PowerShell</span>
-                            </div>
-                        </div>
+                            ))
+                        }
 
                     </div>
                 </section>
