@@ -1,5 +1,81 @@
+"use client";
+
+import { useRef, useState } from "react";
 import ThemeToggle from "./components/ThemeToggle";
 import LiquidEther from "./components/LiquidEther";
+
+const ProjectCard = ({ project }) => {
+    const cardRef = useRef(null);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (e) => {
+        if (!cardRef.current) return;
+
+        const rect = cardRef.current.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        // Calculate distance from center
+        const dx = e.clientX - centerX;
+        const dy = e.clientY - centerY;
+
+        // Strength of the magnetic pull
+        const strength = 0.15;
+
+        setPosition({
+            x: dx * strength,
+            y: dy * strength
+        });
+    };
+
+    const handleMouseLeave = () => {
+        setPosition({ x: 0, y: 0 });
+    };
+
+    return (
+        <div
+            ref={cardRef}
+            className="card"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{
+                transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
+                transition: position.x === 0 ? 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)' : 'transform 0.1s ease-out'
+            }}
+        >
+            <div className="card-content">
+                <div className="card-header">
+                    <h3>{project.title}</h3>
+                    <span className="type-badge">{project.type}</span>
+                </div>
+                <p className="text-sm text-slate-400 mb-2">{project.desc}</p>
+                <p className="text-slate-300 text-sm">
+                    {project.summary}
+                </p>
+                <div className="card-reveal">
+                    <p>{project.details}</p>
+                    <div className="card-actions">
+                        {project.github && (
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="action-btn github">
+                                GitHub
+                            </a>
+                        )}
+                        {project.demo && (
+                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="action-btn demo">
+                                Live Demo
+                            </a>
+                        )}
+                    </div>
+                </div>
+            </div>
+            <div className="tech-stack">
+                {project.stack.map((tech, i) => (
+                    <span key={i} className="tech-tag">{tech}</span>
+                ))}
+            </div>
+        </div>
+    );
+};
 
 export default function Home() {
     return (
@@ -213,7 +289,7 @@ export default function Home() {
                                     details: "A game-like simulation where users influence the timeline, causing ripple effects (anomalies). Heavily relies on graph-based state management.",
                                     stack: ["TypeScript", "WebGL", "State Machines"],
                                     github: "https://github.com/sobiswriter/Cosmos-Anomaly",
-                                    demo: "https://time-line-twist-v2.vercel.app/"
+                                    demo: "https://cosmos-anomaly.vercel.app/"
                                 },
                                 {
                                     title: "Timeline Twist (V2)",
@@ -235,38 +311,7 @@ export default function Home() {
                                     github: "https://github.com/sobiswriter/PowerShell-Utility-Suite"
                                 }
                             ].map((project, index) => (
-                                <div key={index} className="card">
-                                    <div className="card-content">
-                                        <div className="card-header">
-                                            <h3>{project.title}</h3>
-                                            <span className="type-badge">{project.type}</span>
-                                        </div>
-                                        <p className="text-sm text-slate-400 mb-2">{project.desc}</p>
-                                        <p className="text-slate-300 text-sm">
-                                            {project.summary}
-                                        </p>
-                                        <div className="card-reveal">
-                                            <p>{project.details}</p>
-                                            <div className="card-actions">
-                                                {project.github && (
-                                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="action-btn github">
-                                                        GitHub
-                                                    </a>
-                                                )}
-                                                {project.demo && (
-                                                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="action-btn demo">
-                                                        Live Demo
-                                                    </a>
-                                                )}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="tech-stack">
-                                        {project.stack.map((tech, i) => (
-                                            <span key={i} className="tech-tag">{tech}</span>
-                                        ))}
-                                    </div>
-                                </div>
+                                <ProjectCard key={index} project={project} />
                             ))
                         }
 
