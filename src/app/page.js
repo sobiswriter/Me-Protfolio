@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import ThemeToggle from "./components/ThemeToggle";
 import LiquidEther from "./components/LiquidEther";
+import NavDock from "./components/NavDock";
 
 const ProjectCard = ({ project }) => {
     const cardRef = useRef(null);
@@ -358,6 +359,40 @@ export default function Home() {
                     </div>
                 </section>
 
+                {/* Resume Section */}
+                <section id="resume">
+                    <h2>Resume / CV</h2>
+                    <div className="card">
+                        <div className="card-content">
+                            <div className="card-header">
+                                <h3 className="text-gradient">Curriculum Vitae</h3>
+                                <span className="type-badge">Professional PDF</span>
+                            </div>
+                            <p className="text-slate-300">
+                                My resume provides a comprehensive overview of my technical expertise in AI systems, research projects, patent publications, and professional background.
+                            </p>
+
+                            {/* Resume Preview */}
+                            <div className="resume-preview-container">
+                                <iframe
+                                    src="/resume.pdf#toolbar=0"
+                                    className="resume-iframe"
+                                    title="Resume Preview"
+                                />
+                            </div>
+
+                            <div className="mt-8 flex gap-4">
+                                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn flex-1 text-center">
+                                    <span>View Resume →</span>
+                                </a>
+                                <a href="/resume.pdf" download="Souradip_Biswas_Resume.pdf" className="btn flex-1 text-center border-accent hover:border-accent">
+                                    <span>Download CV ↓</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Footer */}
                 <footer className="footer">
                     <p>&copy; {new Date().getFullYear()} Souradip Biswas. Built with Next.js & passion.</p>
@@ -367,6 +402,7 @@ export default function Home() {
                     </div>
                 </footer>
             </main>
+            <NavDock />
         </>
     );
 }
