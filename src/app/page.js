@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 import ThemeToggle from "./components/ThemeToggle";
 import LiquidEther from "./components/LiquidEther";
 import NavDock from "./components/NavDock";
+import Shuffle from "./components/Shuffle";
+import TextType from "./components/TextType";
 
 const ProjectCard = ({ project }) => {
     const cardRef = useRef(null);
@@ -116,10 +118,31 @@ export default function Home() {
 
                 {/* Hero Section */}
                 <section id="hero" className="hero">
-                    <h1>Souradip (Sobi) Biswas</h1>
-                    <p className="tagline">
-                        AI / ML Systems • Applied AI • Creative Tooling
-                    </p>
+                    <TextType
+                        as="h1"
+                        text={["Souradip Biswas", "sobiswriter", "Souradip (Sobi) Biswas"]}
+                        typingSpeed={80}
+                        pauseDuration={4000}
+                        showCursor
+                        cursorCharacter=" |"
+                        loop={true}
+                    />
+                    <Shuffle
+                        text="AI / ML Systems • Applied AI • Creative Tooling"
+                        className="tagline"
+                        shuffleDirection="right"
+                        duration={1}
+                        animationMode="evenodd"
+                        shuffleTimes={4}
+                        ease="power3.out"
+                        stagger={0.09}
+                        threshold={0.1}
+                        triggerOnce={true}
+                        triggerOnHover
+                        respectReducedMotion={true}
+                        loop={false}
+                        loopDelay={0}
+                    />
                     <div className="hero-sub">
                         <p>
                             AI-focused developer and researcher building <strong>applied systems</strong> rather than toy demos.
@@ -333,6 +356,20 @@ export default function Home() {
                                 <br />
                                 <span className="text-sm ml-5 block text-slate-400">
                                     Collaborative project under Blockseblock Labs. Participation in accelerator-style development environment. Focus on scalable AI system development.
+                                </span>
+                            </li>
+                            <li>
+                                <strong className="text-white">LegalLm – HacktoSkill 2025</strong>
+                                <br />
+                                <span className="text-sm ml-5 block text-slate-400">
+                                    A collaborative project under Google's HacktoSkill program. Participation in accelerator-style development environment. Focus on scalable AI Legal Systems.
+                                </span>
+                            </li>
+                            <li>
+                                <strong className="text-white">Espanola – Grade B*</strong>
+                                <br />
+                                <span className="text-sm ml-5 block text-slate-400">
+                                    Hola! Soy Aprender espanol, ¿Como estas? Mucho gusto senorita.
                                 </span>
                             </li>
                         </ul>
