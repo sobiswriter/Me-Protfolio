@@ -231,6 +231,34 @@ export default function Home() {
                         {
                             [
                                 {
+                                    title: "Wassap",
+                                    type: "Real-time Communication",
+                                    desc: "WhatsApp Clone with AI Integration",
+                                    summary: "A modern remake of WhatsApp featuring real-time messaging with integrated AI bot capabilities and enhanced user experience.",
+                                    details: "Full-featured messaging platform with real-time chat, AI-powered assistance, modern UI/UX, and seamless communication workflows. Built with cutting-edge web technologies for optimal performance.",
+                                    stack: ["TypeScript", "Next.js", "AI Integration", "WebSocket"],
+                                    github: "https://github.com/sobiswriter/Wassap",
+                                    demo: "https://wassap-rho.vercel.app/"
+                                },
+                                {
+                                    title: "EquityEcho",
+                                    type: "FinTech / AI Application",
+                                    desc: "Stock Market Prediction Platform",
+                                    summary: "AI-driven financial application for stock market analysis and prediction, providing real-time insights and forecasting capabilities.",
+                                    details: "Comprehensive stock analysis platform leveraging machine learning models for price prediction, trend analysis, and portfolio recommendations. Features interactive charts, real-time data processing, and intelligent forecasting algorithms.",
+                                    stack: ["TypeScript", "Next.js", "ML Models", "Financial APIs"],
+                                    github: "https://github.com/sobiswriter/EquityEcho-Stocks-Predictor"
+                                },
+                                {
+                                    title: "DevineClub",
+                                    type: "Competition Project",
+                                    desc: "AIFusion IIT Ropar Hackathon",
+                                    summary: "Advanced AI application developed for the AIFusion hackathon at IIT Ropar, showcasing innovative AI system design and implementation.",
+                                    details: "Competition-grade project demonstrating cutting-edge AI capabilities, system architecture, and practical problem-solving. Built under time constraints with a focus on scalability and real-world applicability.",
+                                    stack: ["TypeScript", "Next.js", "AI/ML Stack", "Competition-Ready"],
+                                    github: "https://github.com/sobiswriter/DevineClub"
+                                },
+                                {
                                     title: "CosmicCanvas",
                                     type: "Experimental UI",
                                     desc: "Generative Art & Color Playground",
