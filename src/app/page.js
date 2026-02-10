@@ -479,8 +479,8 @@ export default function Home() {
                                         <polyline points="22,6 12,13 2,6"/>
                                     </svg>
                                     <strong className="text-white block mb-1">Email</strong>
-                                    <a href="mailto:souradipbiswas.work@gmail.com" className="text-sm text-slate-400 hover:text-primary transition-colors">
-                                        souradipbiswas.work@gmail.com
+                                    <a href="mailto:souradip.biswas23@lpu.in" className="text-sm text-slate-400 hover:text-primary transition-colors">
+                                        souradip.biswas23@lpu.in
                                     </a>
                                 </div>
                                 
@@ -508,7 +508,7 @@ export default function Home() {
                             </div>
                             
                             <div className="mt-8 flex gap-4 justify-center">
-                                <a href="mailto:souradipbiswas.work@gmail.com" className="btn flex-1 text-center">
+                                <a href="mailto:souradip.biswas23@lpu.in" className="btn flex-1 text-center">
                                     <span>Send Email →</span>
                                 </a>
                                 <a href="https://www.linkedin.com/in/sobiswriter/" target="_blank" rel="noopener noreferrer" className="btn flex-1 text-center border-accent hover:border-accent">
