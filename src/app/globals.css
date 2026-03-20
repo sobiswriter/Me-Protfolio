@@ -256,6 +256,61 @@ section {
     padding: var(--spacing-3xl) var(--spacing-md);
 }
 
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-2xl);
+    width: 100%;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    flex: 1;
+    min-width: 0;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    flex-shrink: 0;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-image-glow {
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--glow-purple) 0%, transparent 70%);
+    filter: blur(20px);
+    z-index: 0;
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+.hero-image {
+    position: relative;
+    z-index: 1;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--glass-border);
+    box-shadow: 0 0 0 1px var(--glass-border), var(--shadow-lg);
+    filter: brightness(0.95) contrast(1.05);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 2px var(--primary), var(--shadow-lg), 0 0 40px var(--glow-purple);
+}
+
 .hero h1 {
     position: relative;
     animation: fadeInUp 1s ease-out;
@@ -813,6 +868,28 @@ a:hover {
     .hero {
         min-height: auto;
         padding: var(--spacing-2xl) var(--spacing-md);
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text {
+        align-items: center;
+    }
+
+    .hero-sub {
+        border-left: none;
+        border-top: 3px solid var(--glass-border);
+        padding-left: 0;
+        padding-top: var(--spacing-sm);
+    }
+
+    .hero-image {
+        width: 200px;
+        height: 200px;
     }
 
     .grid,
