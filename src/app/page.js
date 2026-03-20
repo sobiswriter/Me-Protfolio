@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import ThemeToggle from "./components/ThemeToggle";
 import LiquidEther from "./components/LiquidEther";
 import NavDock from "./components/NavDock";
@@ -118,45 +119,60 @@ export default function Home() {
 
                 {/* Hero Section */}
                 <section id="hero" className="hero">
-                    <TextType
-                        as="h1"
-                        text={["Souradip Biswas", "sobiswriter", "Souradip (Sobi) Biswas"]}
-                        typingSpeed={80}
-                        pauseDuration={4000}
-                        showCursor
-                        cursorCharacter=" |"
-                        loop={true}
-                    />
-                    <Shuffle
-                        text="AI / ML Systems • Applied AI • Creative Tooling"
-                        className="tagline"
-                        shuffleDirection="right"
-                        duration={1}
-                        animationMode="evenodd"
-                        shuffleTimes={4}
-                        ease="power3.out"
-                        stagger={0.09}
-                        threshold={0.1}
-                        triggerOnce={true}
-                        triggerOnHover
-                        respectReducedMotion={true}
-                        loop={false}
-                        loopDelay={0}
-                    />
-                    <div className="hero-sub">
-                        <p>
-                            AI-focused developer and researcher building <strong>applied systems</strong> rather than toy demos.
-                            <br />
-                            College student, independent developer, researcher-oriented.
-                        </p>
-                    </div>
-                    <div className="social-links">
-                        <a href="https://github.com/sobiswriter" target="_blank" rel="noopener noreferrer" className="btn">
-                            <span>GitHub →</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/sobiswriter/" target="_blank" rel="noopener noreferrer" className="btn">
-                            <span>LinkedIn →</span>
-                        </a>
+                    <div className="hero-content">
+                        <div className="hero-text">
+                            <TextType
+                                as="h1"
+                                text={["Souradip Biswas", "sobiswriter", "Souradip (Sobi) Biswas"]}
+                                typingSpeed={80}
+                                pauseDuration={4000}
+                                showCursor
+                                cursorCharacter=" |"
+                                loop={true}
+                            />
+                            <Shuffle
+                                text="AI / ML Systems • Applied AI • Creative Tooling"
+                                className="tagline"
+                                shuffleDirection="right"
+                                duration={1}
+                                animationMode="evenodd"
+                                shuffleTimes={4}
+                                ease="power3.out"
+                                stagger={0.09}
+                                threshold={0.1}
+                                triggerOnce={true}
+                                triggerOnHover
+                                respectReducedMotion={true}
+                                loop={false}
+                                loopDelay={0}
+                            />
+                            <div className="hero-sub">
+                                <p>
+                                    AI-focused developer and researcher building <strong>applied systems</strong> rather than toy demos.
+                                    <br />
+                                    College student, independent developer, researcher-oriented.
+                                </p>
+                            </div>
+                            <div className="social-links">
+                                <a href="https://github.com/sobiswriter" target="_blank" rel="noopener noreferrer" className="btn">
+                                    <span>GitHub →</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/sobiswriter/" target="_blank" rel="noopener noreferrer" className="btn">
+                                    <span>LinkedIn →</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="hero-image-wrapper">
+                            <div className="hero-image-glow" />
+                            <Image
+                                src="/my-image.png"
+                                alt="Souradip Biswas"
+                                width={320}
+                                height={320}
+                                className="hero-image"
+                                priority
+                            />
+                        </div>
                     </div>
                 </section>
 
