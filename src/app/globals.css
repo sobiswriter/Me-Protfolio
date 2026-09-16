@@ -126,7 +126,7 @@ body {
     font-family: var(--font-display);
     background-color: var(--background);
     color: var(--foreground);
-    line-height: 1.7;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -208,6 +208,7 @@ h2 {
     margin-bottom: var(--spacing-lg);
     position: relative;
     display: inline-block;
+    letter-spacing: -0.02em;
 }
 
 h2::after {
@@ -340,14 +341,14 @@ section {
 }
 
 .tagline::before {
-    content: '>';
+    content: '•';
     color: var(--accent);
     font-weight: 700;
 }
 
 .tagline::after {
-    content: '█';
-    animation: blink 1.2s step-end infinite;
+    content: '';
+    display: none;
 }
 
 @keyframes blink {
@@ -366,7 +367,7 @@ section {
 .hero-sub {
     max-width: 700px;
     font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-    color: var(--gray-300);
+    color: var(--gray-200);
     line-height: 1.7;
     padding-left: var(--spacing-md);
     border-left: 3px solid var(--glass-border);
@@ -440,10 +441,10 @@ section {
     position: relative;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    border-radius: 1rem;
+    border-radius: 0.9rem;
     padding: var(--spacing-lg);
-    backdrop-filter: blur(10px);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(12px);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -465,10 +466,10 @@ section {
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-6px);
     background: var(--card-hover);
     border-color: var(--primary);
-    box-shadow: 0 20px 40px -20px var(--glow-purple);
+    box-shadow: 0 16px 32px -24px var(--glow-purple);
 }
 
 .card:hover::before {
