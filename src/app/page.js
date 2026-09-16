@@ -247,6 +247,53 @@ export default function Home() {
                         {
                             [
                                 {
+                                    title: "Wat-EWrite",
+                                    type: "Blogging Platform",
+                                    desc: "Blogging site example and personal blogging platform.",
+                                    summary: "A modern blogging experience designed for publishing, reading, and showcasing written work.",
+                                    details: "Built as both a portfolio-ready blogging example and a personal writing platform, with a clean reading experience and publishing-focused UX.",
+                                    stack: ["TypeScript", "Next.js", "React", "Vercel"],
+                                    github: "https://github.com/sobiswriter/Wat-EWrite",
+                                    demo: "https://wat-e-write.vercel.app"
+                                },
+                                {
+                                    title: "Sonar Thali Food Commerce App",
+                                    type: "Food Commerce Application",
+                                    desc: "Food commerce app for showcasing products and serving customers.",
+                                    summary: "A customer-facing food commerce experience for discovering offerings and supporting showcase and ordering workflows.",
+                                    details: "Designed for product discovery and smooth customer journeys, with a storefront experience tailored to food-focused commerce use cases.",
+                                    stack: ["TypeScript", "Next.js", "React", "E-commerce"],
+                                    github: "https://github.com/sobiswriter/Sonar-Thali-Food-Commerce-App",
+                                    demo: "https://sonar-thali.vercel.app"
+                                },
+                                {
+                                    title: "RIGHT.LEFT Digital & Video Production Agency",
+                                    type: "Digital Agency Platform",
+                                    desc: "Elite digital engineering and motion creative platform.",
+                                    summary: "A production-grade agency application with a high-contrast editorial aesthetic and modern React 19 architecture.",
+                                    details: "Built with an Express full-stack API layer and Gemini server-side intelligence for instant RFP scoping and lead qualification, and designed for headless e-commerce storefronts, scalable enterprise SaaS applications, architectural portfolios, and commercial video ad production.",
+                                    stack: ["React 19", "Express", "Gemini AI", "Headless E-commerce", "SaaS"],
+                                    demo: "https://rightleft.ai.studio/"
+                                },
+                                {
+                                    title: "Shri Guru Kirpa Gold Platters And Jewellers",
+                                    type: "Luxury E-commerce Website",
+                                    desc: "Modern jewellery catalog and customer experience for Shri Guru Kirpa Gold Platters And Jewellers in Phagwara, Punjab.",
+                                    summary: "A luxury jewellery storefront featuring catalog browsing, virtual try-on interactions, appointment booking, store discovery, and an AI-powered jewellery concierge.",
+                                    details: "Crafted as a high-polish jewellery commerce experience balancing premium visual design with customer-friendly discovery and booking workflows.",
+                                    stack: ["React", "Vite", "E-commerce", "AI Concierge"],
+                                    demo: "https://guru-kripa-jwellers.vercel.app/"
+                                },
+                                {
+                                    title: "GDC Diagnostic Center",
+                                    type: "Healthcare Web Application",
+                                    desc: "Official diagnostic and pathology web portal for GDC Diagnostic Center, Benad Road, Jaipur, Rajasthan.",
+                                    summary: "A web application and management-system experience for a 24×7 diagnostic center, presenting pathology services, center information, and patient-facing workflows.",
+                                    details: "Built to support clear service presentation and day-to-day center operations while improving patient access to essential diagnostic center information.",
+                                    stack: ["React", "Vite", "Healthcare", "Management System"],
+                                    demo: "https://gdc-site.vercel.app/"
+                                },
+                                {
                                     title: "Wassap",
                                     type: "Real-time Communication",
                                     desc: "WhatsApp Clone with AI Integration",
