@@ -148,9 +148,9 @@ export default function Home() {
                             />
                             <div className="hero-sub">
                                 <p>
-                                    AI-focused developer and researcher building <strong>applied systems</strong> rather than toy demos.
+                                    AI-focused developer and researcher building <strong>applied systems</strong>, not just demos.
                                     <br />
-                                    College student, independent developer, researcher-oriented.
+                                    Independent builder with a research-driven product mindset.
                                 </p>
                             </div>
                             <div className="social-links">
@@ -181,12 +181,11 @@ export default function Home() {
                     <h2>Professional Overview</h2>
                     <div className="space-y-4 text-slate-300 text-lg">
                         <p>
-                            I am an AI-focused developer and researcher dedicated to building <span className="text-gradient font-semibold">applied systems</span> rather than just prototypes.
-                            My work is driven by a strong interest in <span className="text-gradient font-semibold">document intelligence, generative AI, NLP, and persona-based systems</span>.
+                            I build <span className="text-gradient font-semibold">applied AI systems</span> with a focus on usability, clarity, and reliable execution.
+                            My core interests include <span className="text-gradient font-semibold">document intelligence, generative AI, NLP, and behavior-aware interfaces</span>.
                         </p>
                         <p>
-                            I combine <span className="text-gradient font-semibold">AI + interfaces + tooling</span> into complete end-to-end products, and I am comfortable with
-                            experimentation, iteration, and rebuilding systems from scratch to achieve the best architecture.
+                            I combine <span className="text-gradient font-semibold">AI + interface design + tooling</span> into complete products, with an iterative workflow centered on shipping useful outcomes.
                         </p>
                     </div>
                 </section>
@@ -247,11 +246,58 @@ export default function Home() {
                         {
                             [
                                 {
+                                    title: "Wat-EWrite",
+                                    type: "Blogging Platform",
+                                    desc: "Blogging site example and personal blogging platform.",
+                                    summary: "A clean platform for publishing, reading, and showcasing long-form writing.",
+                                    details: "Built as both a personal blog and a reference implementation focused on readable layouts and smooth content publishing.",
+                                    stack: ["TypeScript", "Next.js", "React", "Vercel"],
+                                    github: "https://github.com/sobiswriter/Wat-EWrite",
+                                    demo: "https://wat-e-write.vercel.app"
+                                },
+                                {
+                                    title: "Sonar Thali Food Commerce App",
+                                    type: "Food Commerce Application",
+                                    desc: "Food commerce app for showcasing products and serving customers.",
+                                    summary: "A customer-facing storefront for discovering menu offerings and placing orders.",
+                                    details: "Designed around clear product discovery and smooth purchase flows for food-focused commerce experiences.",
+                                    stack: ["TypeScript", "Next.js", "React", "E-commerce"],
+                                    github: "https://github.com/sobiswriter/Sonar-Thali-Food-Commerce-App",
+                                    demo: "https://sonar-thali.vercel.app"
+                                },
+                                {
+                                    title: "RIGHT.LEFT Digital & Video Production Agency",
+                                    type: "Digital Agency Platform",
+                                    desc: "Elite digital engineering and motion creative platform.",
+                                    summary: "A production-grade agency platform with an editorial visual system and React 19 architecture.",
+                                    details: "Includes an Express API layer and Gemini-powered server intelligence for fast RFP scoping and lead qualification.",
+                                    stack: ["React 19", "Express", "Gemini AI", "Headless E-commerce", "SaaS"],
+                                    demo: "https://rightleft.ai.studio/"
+                                },
+                                {
+                                    title: "Shri Guru Kirpa Gold Platters And Jewellers",
+                                    type: "Luxury E-commerce Website",
+                                    desc: "Modern jewellery catalog and customer experience for Shri Guru Kirpa Gold Platters And Jewellers in Phagwara, Punjab.",
+                                    summary: "A premium jewellery storefront with catalog browsing, virtual try-on, and appointment booking.",
+                                    details: "Balances high-end visual design with practical discovery flows, store information, and concierge-style guidance.",
+                                    stack: ["React", "Vite", "E-commerce", "AI Concierge"],
+                                    demo: "https://guru-kripa-jwellers.vercel.app/"
+                                },
+                                {
+                                    title: "GDC Diagnostic Center",
+                                    type: "Healthcare Web Application",
+                                    desc: "Official diagnostic and pathology web portal for GDC Diagnostic Center, Benad Road, Jaipur, Rajasthan.",
+                                    summary: "A 24×7 diagnostic center web portal for services, center information, and patient-facing workflows.",
+                                    details: "Built to present pathology offerings clearly while supporting day-to-day operational and management needs.",
+                                    stack: ["React", "Vite", "Healthcare", "Management System"],
+                                    demo: "https://gdc-site.vercel.app/"
+                                },
+                                {
                                     title: "Wassap",
                                     type: "Real-time Communication",
                                     desc: "WhatsApp Clone with AI Integration",
-                                    summary: "A modern remake of WhatsApp featuring real-time messaging with integrated AI bot capabilities and enhanced user experience.",
-                                    details: "Full-featured messaging platform with real-time chat, AI-powered assistance, modern UI/UX, and seamless communication workflows. Built with cutting-edge web technologies for optimal performance.",
+                                    summary: "A real-time messaging app inspired by WhatsApp with built-in AI assistance.",
+                                    details: "Includes live chat, responsive UI patterns, and integrated assistant workflows for faster communication.",
                                     stack: ["TypeScript", "Next.js", "AI Integration", "WebSocket"],
                                     github: "https://github.com/sobiswriter/Wassap",
                                     demo: "https://wassap-rho.vercel.app/"
@@ -260,8 +306,8 @@ export default function Home() {
                                     title: "EquityEcho",
                                     type: "FinTech / AI Application",
                                     desc: "Stock Market Prediction Platform",
-                                    summary: "AI-driven financial application for stock market analysis and prediction, providing real-time insights and forecasting capabilities.",
-                                    details: "Comprehensive stock analysis platform leveraging machine learning models for price prediction, trend analysis, and portfolio recommendations. Features interactive charts, real-time data processing, and intelligent forecasting algorithms.",
+                                    summary: "An AI-assisted platform for stock analysis, trend tracking, and market prediction.",
+                                    details: "Combines ML-based forecasting with interactive financial views to support better trading and portfolio decisions.",
                                     stack: ["TypeScript", "Next.js", "ML Models", "Financial APIs"],
                                     github: "https://github.com/sobiswriter/EquityEcho-Stocks-Predictor"
                                 },
@@ -269,8 +315,8 @@ export default function Home() {
                                     title: "DevineClub",
                                     type: "Competition Project",
                                     desc: "AIFusion IIT Ropar Hackathon",
-                                    summary: "Advanced AI application developed for the AIFusion hackathon at IIT Ropar, showcasing innovative AI system design and implementation.",
-                                    details: "Competition-grade project demonstrating cutting-edge AI capabilities, system architecture, and practical problem-solving. Built under time constraints with a focus on scalability and real-world applicability.",
+                                    summary: "An AI application built for AIFusion at IIT Ropar under hackathon constraints.",
+                                    details: "Focused on practical architecture, fast iteration, and real-world problem solving in a competition setting.",
                                     stack: ["TypeScript", "Next.js", "AI/ML Stack", "Competition-Ready"],
                                     github: "https://github.com/sobiswriter/DevineClub"
                                 },
@@ -278,8 +324,8 @@ export default function Home() {
                                     title: "CosmicCanvas",
                                     type: "Experimental UI",
                                     desc: "Generative Art & Color Playground",
-                                    summary: "A dynamic canvas to draw and experiment with colors, fluid geometry, and interactive patterns.",
-                                    details: "Built to explore WebGL-based color blending and procedural strokes. It serves as a creative playground for digital art experiments.",
+                                    summary: "An interactive canvas for experimenting with generative color and motion.",
+                                    details: "Explores WebGL rendering, procedural strokes, and responsive visual interaction patterns.",
                                     stack: ["JavaScript", "WebGL", "Canvas API"],
                                     github: "https://github.com/sobiswriter/CosmicCanvas",
                                     demo: "https://sobiswriter.github.io/CosmicCanvas/"
@@ -288,8 +334,8 @@ export default function Home() {
                                     title: "LegalLM",
                                     type: "AI Application",
                                     desc: "Featured Flagship Project",
-                                    summary: "AI-driven platform for uploading, parsing, and analyzing legal documents using NLP-based approaches.",
-                                    details: "Leverages large language models to extract key clauses, identify risks, and summarize complex legal jargon into actionable insights. Built for speed and accuracy.",
+                                    summary: "An AI platform for uploading, parsing, and analyzing legal documents.",
+                                    details: "Uses LLM workflows to surface key clauses, risks, and concise summaries for faster legal review.",
                                     stack: ["TypeScript", "AI/NLP Stack", "Next.js"],
                                     github: "https://github.com/sobiswriter/LegalLM",
                                     demo: "https://legal-lmx24-git-main-sobiswriters-projects.vercel.app/"
@@ -298,8 +344,8 @@ export default function Home() {
                                     title: "Project AIC",
                                     type: "AI Bot / System",
                                     desc: "Core Long-term Personal Project",
-                                    summary: "Python-based intelligent bot system exploring behavior, interaction, and decision logic.",
-                                    details: "An experimental autonomous agent designed to simulate long-term memory and adaptive personality traits. Focuses on 'ghost in the machine' behavioral patterns.",
+                                    summary: "A Python-based intelligent bot system exploring behavior and decision logic.",
+                                    details: "Investigates long-term memory, adaptive responses, and personality-oriented interaction design.",
                                     stack: ["Python", "PyTorch", "Transformers"],
                                     github: "https://github.com/sobiswriter/Project-AIC"
                                 },
@@ -307,8 +353,8 @@ export default function Home() {
                                     title: "The Shadow Diary",
                                     type: "AI Journaling",
                                     desc: "Psychological AI Tool",
-                                    summary: "Journaling platform that uses AI to rewrite and reinterpret entries, inspired by psychological and Jungian themes.",
-                                    details: "Transforms raw user thoughts into structured narratives, offering psychoanalytic perspectives (e.g., Shadow Work). Features a moody, immersive interface.",
+                                    summary: "An AI-assisted journal that rewrites and reframes entries using psychological themes.",
+                                    details: "Turns raw notes into structured reflections with guided interpretation and a focused writing interface.",
                                     stack: ["TypeScript", "Next.js", "OpenAI API"],
                                     github: "https://github.com/sobiswriter/The-Shadow-Diary",
                                     demo: "https://the-shadow-diary.vercel.app/"
@@ -317,8 +363,8 @@ export default function Home() {
                                     title: "PersonaVerse",
                                     type: "Desktop AI App",
                                     desc: "Interactive Playground",
-                                    summary: "Persona creation and interaction playground enabling users to build and converse with AI-driven personalities.",
-                                    details: "A comprehensive tool for drafting character backstories, voice settings, and behavioral constraints. Includes a real-time chat simulation environment.",
+                                    summary: "A desktop playground for creating and chatting with AI-driven personas.",
+                                    details: "Supports character profiles, behavior constraints, and real-time conversational simulation.",
                                     stack: ["Node.js", "Electron", "React"],
                                     github: "https://github.com/sobiswriter/PersonaVerse"
                                 },
@@ -326,8 +372,8 @@ export default function Home() {
                                     title: "AI Overlay",
                                     type: "Desktop Utility",
                                     desc: "Productivity Tool",
-                                    summary: "Lightweight AI overlay tool designed for productivity and real-time assistance.",
-                                    details: "Hover-based AI assistant that functions as a smart layer over your OS. capable of reading screen context and providing instant answers.",
+                                    summary: "A lightweight desktop overlay for quick, context-aware AI assistance.",
+                                    details: "Runs as a smart on-screen layer to help with fast lookups and productivity tasks.",
                                     stack: ["Python", "Tkinter", "OCR"],
                                     github: "https://github.com/sobiswriter/AI-Overlay"
                                 },
@@ -335,8 +381,8 @@ export default function Home() {
                                     title: "Inviter",
                                     type: "Web Application",
                                     desc: "Event Management",
-                                    summary: "Invitation management system integrating messaging and email services for automated communication workflows.",
-                                    details: "Streamlines the RSVP process with automated follow-ups via SMS and Email. Includes a dashboard for tracking guest status in real-time.",
+                                    summary: "An invitation management app with automated SMS and email workflows.",
+                                    details: "Streamlines RSVPs through reminders, follow-ups, and real-time guest tracking dashboards.",
                                     stack: ["Node.js", "Next.js", "Twilio", "SMTP"],
                                     github: "https://github.com/sobiswriter/Inviter"
                                 },
@@ -344,8 +390,8 @@ export default function Home() {
                                     title: "Business Venture App",
                                     type: "Desktop Application",
                                     desc: "Enterprise Solution",
-                                    summary: "Business-focused application supporting financial tracking, reporting, and internal workflows.",
-                                    details: "Secure desktop environment for managing accounts, generating invoice PDFs, and visualizing cash flow data.",
+                                    summary: "A business desktop app for financial tracking, reporting, and internal operations.",
+                                    details: "Includes account management, invoice PDF generation, and cash-flow visibility tools.",
                                     stack: ["Node.js", "Electron", "SQLite"],
                                     github: "https://github.com/sobiswriter/Business-Venture-App"
                                 },
@@ -353,8 +399,8 @@ export default function Home() {
                                     title: "Cosmos Anomaly",
                                     type: "Experimental System",
                                     desc: "Narrative Engine",
-                                    summary: "Narrative-driven and system-oriented project exploring timeline manipulation and anomaly-based logic.",
-                                    details: "A game-like simulation where users influence the timeline, causing ripple effects (anomalies). Heavily relies on graph-based state management.",
+                                    summary: "A narrative-driven system exploring timeline manipulation and anomaly logic.",
+                                    details: "Users influence branching timelines, with graph-based state management driving ripple effects.",
                                     stack: ["TypeScript", "WebGL", "State Machines"],
                                     github: "https://github.com/sobiswriter/Cosmos-Anomaly",
                                     demo: "https://cosmos-anomaly.vercel.app/"
@@ -363,8 +409,8 @@ export default function Home() {
                                     title: "Timeline Twist (V2)",
                                     type: "Iterative System",
                                     desc: "System Refactor",
-                                    summary: "Second iteration of a timeline-based project, emphasizing refactoring and architectural improvement.",
-                                    details: "Focused on clean architecture and performance, rebuilding the core timeline engine to support infinite branching.",
+                                    summary: "The second iteration of a timeline system with a cleaner architecture.",
+                                    details: "Refactors the core engine for better performance and support for deep branching paths.",
                                     stack: ["TypeScript", "React", "Redux"],
                                     github: "https://github.com/sobiswriter/TimeLine-Twist-V2",
                                     demo: "https://time-line-twist-v2.vercel.app/"
@@ -373,8 +419,8 @@ export default function Home() {
                                     title: "PS Utility Suite",
                                     type: "Automation Tool Collection",
                                     desc: "DevOps / Scripting",
-                                    summary: "Collection of PowerShell modules including web scraping, scheduling, stopwatch utilities, and automation tools.",
-                                    details: "A power-user toolkit for Windows, automating mundane tasks like file organization, data scraping, and system monitoring.",
+                                    summary: "A PowerShell toolkit for scripting, scheduling, scraping, and routine automation.",
+                                    details: "Designed for Windows power users to automate repetitive operations and system-level tasks.",
                                     stack: ["PowerShell", ".NET"],
                                     github: "https://github.com/sobiswriter/PowerShell-Utility-Suite"
                                 }
@@ -413,7 +459,7 @@ export default function Home() {
                                 <strong className="text-white">Espanola – Grade B*</strong>
                                 <br />
                                 <span className="text-sm ml-5 block text-slate-400">
-                                    Hola! Soy Aprender espanol, ¿Como estas? Mucho gusto senorita.
+                                    Completed foundational Spanish coursework with consistent performance.
                                 </span>
                             </li>
                         </ul>
@@ -484,8 +530,8 @@ export default function Home() {
                                 <span className="type-badge">Available</span>
                             </div>
                             <p className="text-slate-300 mb-6">
-                                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. 
-                                Whether you're looking for collaboration on AI systems, need technical consultation, or just want to chat about technology—I'd love to hear from you.
+                                I’m open to collaborating on AI products, creative engineering work, and high-quality digital experiences.
+                                If you have a project in mind, feel free to reach out.
                             </p>
                             
                             <div className="grid">
